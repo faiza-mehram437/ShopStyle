@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ShopStyle — Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; line-height:1.6; color:#333; }
+    h2, h3, h4 { margin:0 0 10px; }
+    img { max-width:100%; display:block; border-radius:10px; }
+
+    /* Navbar */
+    nav { display:flex; justify-content:space-between; align-items:center; padding:15px 30px; background:#333; color:#fff; }
+    nav ul { list-style:none; display:flex; gap:20px; margin:0; padding:0; }
+    nav ul li a { color:#fff; text-decoration:none; transition:0.3s; }
+    nav ul li a:hover, .active { color:#f39c12; }
+
+    /* Container utility */
+    .container { max-width:1200px; margin:auto; padding:0 20px; }
+
+    /* Hero */
+    .shop-hero { padding:50px 0; background:#f8f8f8; }
+    .hero-inner { display:grid; grid-template-columns:1fr 400px; gap:40px; align-items:center; }
+    .shop-hero h2 { font-size:2rem; margin-bottom:15px; }
+    .shop-hero p { margin-bottom:20px; }
+    .btn { padding:10px 16px; background:#f39c12; border:none; color:#fff; cursor:pointer; border-radius:6px; transition:0.3s; text-decoration:none; display:inline-block; }
+    .btn:hover { background:#d35400; }
+
+    /* Grid (Categories + Products) */
+    .shop-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:24px; }
+    .product-card { background:#fff; border:1px solid #e5e7eb; border-radius:12px; overflow:hidden; transition:0.3s; }
+    .product-card:hover { transform:translateY(-5px); box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+    .product-body { padding:16px; }
+    .product-body h3 { margin:0 0 8px; font-size:1.2rem; }
+    .desc { font-size:0.95rem; color:#666; margin-bottom:10px; }
+    .badges { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px; }
+    .badge { font-size:0.8rem; padding:4px 8px; background:#f4f4f4; border-radius:6px; }
+    .product-cta { display:flex; justify-content:space-between; align-items:center; margin-top:10px; }
+    .price { font-weight:bold; color:#f39c12; }
+
+    /* Newsletter */
+    .newsletter { display:flex; flex-wrap:wrap; gap:16px; align-items:center; padding:20px; border-radius:12px; background:#f9fafb; border:1px solid #e5e7eb; }
+    .newsletter input { padding:10px 12px; border-radius:8px; border:1px solid #ccc; flex:1; }
+
+    /* Footer */
+    footer { background:#222; color:#fff; padding:30px 0; text-align:center; margin-top:40px; }
+    footer nav a { margin:0 12px; color:#fff; text-decoration:none; font-size:0.95rem; }
+    footer nav a:hover { color:#f39c12; }
+    footer p { margin-top:15px; font-size:14px; color:#aaa; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+
+      <h1 class="logo">🛍 ShopStyle</h1>
+      <ul class="nav-links">
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">🛒 Cart <span id="cart-count">0</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="shop-hero">
+    <div class="container hero-inner">
+      <div>
+        <h2>Welcome to ShopStyle</h2>
+        <p>Discover curated fashion, gadgets, and home picks — handpicked for quality and style. Free shipping on orders over $99.</p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn" href="shop.html">🛍 Browse Collection</a>
+          <a class="btn" href="#featured" style="background:#fff; color:#0ea5e9; border:1px solid #0ea5e9;">✨ Today’s Picks</a>
+        </div>
+      </div>
+      <div class="product-media">
+        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1200&q=80" alt="Shopping banner">
+      </div>
+    </div>
+  </section>
+
+  <!-- Search -->
+  <main class="container" style="padding:30px 0;">
+    <div style="display:flex; gap:12px; align-items:center;">
+      <input type="search" placeholder="Search products, categories, brands..." style="flex:1; padding:10px 12px; border-radius:10px; border:1px solid #ddd;">
+      <button class="btn">Search</button>
+    </div>
+  </main>
+
+  <!-- Categories -->
+  <section class="container" style="padding:40px 0;">
+    <h3>Shop By Category</h3>
+    <div class="shop-grid">
+      <article class="product-card">
+        <div class="product-media"><img src="images/dresses.webp" alt="Fashion category"></div>
+        <div class="product-body">
+          <h3>Fashion</h3>
+          <p class="desc">Latest dresses, tops & seasonal staples.</p>
+          <div class="product-cta"><span class="price">From $29</span><a class="btn" href="shop.html#dresses">Explore</a></div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-media"><img src="images/gadets.webp" alt="Gadgets category"></div>
+        <div class="product-body">
+          <h3>Gadgets</h3>
+          <p class="desc">Smart devices, audio, and accessories.</p>
+          <div class="product-cta"><span class="price">From $19</span><a class="btn" href="shop.html#gadgets">Explore</a></div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-media"><img src="images/homedecor.jpg" alt="Home decor category"></div>
+        <div class="product-body">
+          <h3>Home Decor</h3>
+          <p class="desc">Decor, cushions, lighting & more to style your space.</p>
+          <div class="product-cta"><span class="price">From $15</span><a class="btn" href="shop.html#home">Explore</a></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Featured -->
+  <section id="featured" class="container" style="padding:40px 0;">
+    <h3>Featured Products</h3>
+    <div class="shop-grid">
+      <article class="product-card">
+        <div class="product-media"><img src="images/watch.webp" alt="Smart watch"></div>
+        <div class="product-body">
+          <h3>Smart Watch</h3>
+          <p class="desc">Track activity, calls, and notifications on the go.</p>
+          <div class="badges"><span class="badge">⭐ Top Rated</span><span class="badge">⌚ 1-year warranty</span></div>
+          <div class="product-cta"><span class="price">$120</span><button class="btn">🛒 Add</button></div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-media"><img src="images/shoes.webp" alt="Running shoes"></div>
+        <div class="product-body">
+          <h3>Running Shoes</h3>
+          <p class="desc">Comfortable, breathable and made for daily runs.</p>
+          <div class="badges"><span class="badge">🔥 New</span><span class="badge">👟 Best Comfort</span></div>
+          <div class="product-cta"><span class="price">$90</span><button class="btn">🛒 Add</button></div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-media"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80" alt="Luxury sofa"></div>
+        <div class="product-body">
+          <h3>Luxury Sofa</h3>
+          <p class="desc">Stylish comfort for living room upgrades.</p>
+          <div class="badges"><span class="badge">✨ Premium</span><span class="badge">🚚 White-Glove Delivery</span></div>
+          <div class="product-cta"><span class="price">$550</span><button class="btn">🛒 Add</button></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="container" style="padding:40px 0;">
+    <div class="newsletter">
+      <div style="flex:1;">
+        <h4>Join our newsletter</h4>
+        <p style="margin:0; color:#666;">Get exclusive offers & early access to new arrivals.</p>
+      </div>
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <input type="email" placeholder="Your email">
+        <button class="btn">Subscribe</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <h2>ShopStyle</h2>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="shop.html">Shop</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p>© 2025 ShopStyle. All Rights Reserved by Faiza Mehram.</p>
+    </div>
+  </footer>
+  </footer>
+</body>
+</html>

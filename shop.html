@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ShopStyle — Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; }
+    nav { display:flex; justify-content:space-between; align-items:center; padding:15px 30px; background:#333; color:#fff; }
+    nav ul { list-style:none; display:flex; gap:20px; }
+    nav ul li a { color:#fff; text-decoration:none; transition:0.3s; }
+    nav ul li a:hover, .active { color:#f39c12; }
+
+    .page-header { text-align:center; padding:40px; background:#f4f4f4; }
+    .page-header h2 { font-size:2rem; }
+
+    .contact-container {
+      display:grid; 
+      grid-template-columns:1fr 1fr; 
+      gap:30px; 
+      padding:50px;
+    }
+
+    form { display:flex; flex-direction:column; gap:15px; }
+    form input, form textarea {
+      padding:10px; 
+      border:1px solid #ccc; 
+      border-radius:8px; 
+      transition:0.3s;
+    }
+    form input:focus, form textarea:focus {
+      border-color:#f39c12; 
+      box-shadow:0 0 8px rgba(243,156,18,0.3);
+    }
+    .btn {
+      padding:12px; 
+      background:#f39c12; 
+      border:none; 
+      color:#fff; 
+      cursor:pointer; 
+      border-radius:8px; 
+      transition:0.3s;
+    }
+    .btn:hover { background:#d35400; }
+
+    .contact-info {
+      display:flex; 
+      flex-direction:column; 
+      gap:15px; 
+      justify-content:center;
+    }
+    .contact-info div { display:flex; align-items:center; gap:10px; }
+    .contact-info i { color:#f39c12; }
+
+    iframe { width:100%; height:250px; border:0; border-radius:10px; }
+
+    footer { text-align:center; padding:20px; background:#333; color:#fff; margin-top:30px; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="navbar">
+      <h1 class="logo">🛍 ShopStyle</h1>
+
+      <ul class="nav-links">
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">🛒 Cart <span id="cart-count">0</span></a></li>
+      </ul>
+    </nav>
+  </header>
+<body>
+  
+<!-- Shop Hero -->
+<section class="hero">
+  <div class="product-media" style="position: relative; border-radius: 12px; overflow: hidden;">
+    
+    <!-- Image -->
+    <img src="images/collection.png" alt="Shopping banner" style="width:100%; display:block; border-radius:12px;">
+    
+    <!-- Text Overlay -->
+    <div class="hero-text" style="position: absolute; top: 50%; left: 50%; 
+                                  transform: translate(-50%, -50%); 
+                                  color: white; text-align: center; 
+                                  background: rgba(0,0,0,0.5); 
+                                  padding: 20px; border-radius: 8px;">
+      <h1 style="margin:0;">Shop Our Exclusive Collection</h1>
+      <p style="margin:0;">Discover premium fashion, shoes, jewelry & accessories curated just for you.</p>
+    </div>
+
+  </div>
+</section>
+<!-- Products Intro Section -->
+<section class="products-intro" style="padding:60px 20px; text-align:center; background:#f8f8f8; border-radius:12px; margin:40px auto; max-width:1000px;">
+  <h2 style="font-size:2.2rem; font-weight:700; margin-bottom:20px; color:#333;">
+    Our Products
+  </h2>
+  <p style="font-size:1.1rem; color:#555; line-height:1.6; max-width:800px; margin:0 auto;">
+    Explore a wide range of premium-quality clothing, footwear, jewelry, and lifestyle accessories designed to elevate your everyday style.  
+    Our collection combines elegance, comfort, and modern trends to bring you the best shopping experience.
+  </p>
+</section>
+
+
+  <!-- Shop Products -->
+  <main id="shop" class="shop-grid">
+
+    <!-- Dress -->
+    <div class="product-card">
+      <img src="images/dress.jpg" alt="Elegant Dress">
+      <h2>Elegant Dress</h2>
+      <p>Find your perfect outfit for any occasion with our premium dresses collection.</p>
+      <div class="badges">
+        <span class="badge">⭐ Best Seller</span>
+        <span class="badge">🚚 Free Shipping</span>
+      </div>
+      <p class="price">$120</p>
+      <button class="btn">🛒 Add to Cart</button>
+    </div>
+
+    <!-- Shoes -->
+    <div class="product-card">
+      <img src="images/shoes.webp" alt="Stylish Shoes">
+      <h2>Stylish Shoes</h2>
+      <p>Step into comfort and fashion with our collection of stylish shoes.</p>
+      <div class="badges">
+        <span class="badge">⭐ Trending</span>
+        <span class="badge">👟 Comfort Fit</span>
+      </div>
+      <p class="price">$90</p>
+      <button class="btn">🛒 Add to Cart</button>
+    </div>
+
+    <!-- Jewelry -->
+    <div class="product-card">
+      <img src="images/jewllry.webp" alt="Luxury Jewelry">
+      <h2>Luxury Jewelry</h2>
+      <p>Timeless elegance crafted to perfection — shine with our premium jewelry pieces.</p>
+      <div class="badges">
+        <span class="badge">💎 Luxury</span>
+        <span class="badge">🎁 Perfect Gift</span>
+      </div>
+      <p class="price">$250</p>
+      <button class="btn">🛒 Add to Cart</button>
+    </div>
+
+    <!-- Bags -->
+    <div class="product-card">
+      <img src="images/bags.webp" alt="Premium Bag">
+      <h2>Premium Bag</h2>
+      <p>Carry your style with elegance — our premium bags are designed for every occasion.</p>
+      <div class="badges">
+        <span class="badge">👜 Premium Quality</span>
+        <span class="badge">✔ Durable</span>
+      </div>
+      <p class="price">$180</p>
+      <button class="btn">🛒 Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="images/dresses.webp" alt="Elegant Dress">
+      <h2>Elegant Dress</h2>
+      <p>Find your perfect outfit for any occasion with our premium dresses collection.</p>
+      <div class="badges">
+        <span class="badge">⭐ Best Seller</span>
+        <span class="badge">🚚 Free Shipping</span>
+      </div>
+      <p class="price">$120</p>
+      <button class="btn">🛒 Add to Cart</button>
+    </div>
+
+    <!-- Decor -->
+    <div class="product-card">
+      <img src="images/decor.webp" alt="Stylish duck">
+      <h2>Decor Duck</h2>
+      <p>Step into comfort and fashion with our collection of stylish shoes.</p>
+      <div class="badges">
+        <span class="badge">⭐ Trending</span>
+        <span class="badge">👟 Luxury</span>
+      </div>
+      <p class="price">$20</p>
+      <button class="btn">🛒 Add to Cart</button>
+    </div>
+
+    <!-- Bed -->
+    <div class="product-card">
+      <img src="images/bed.webp" alt="Comfort bed">
+      <h2>Bed Comfort</h2>
+      <p>Comfort that redefines your sleeping experience</p>
+      <div class="badges">
+        <span class="badge">💎 Luxury</span>
+        <span class="badge">🎁 Perfect Comfort</span>
+      </div>
+      <p class="price">$250</p>
+      <button class="btn">🛒 Add to Cart</button>
+    </div>
+
+    <!-- Bottle-->
+    <div class="product-card">
+      <img src="images/bottle.webp" alt="Premium Bottel">
+      <h2>Water Bottle</h2>
+      <p>Stay hydrated with style and convenience</p>
+      <div class="badges">
+        <span class="badge">👜 Premium Quality</span>
+        <span class="badge">✔ Durable</span>
+      </div>
+      <p class="price">$10</p>
+      <button class="btn">🛒 Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="images/shalwarqameez.webp" alt="Elegant Dress">
+      <h2> Shalwar/Qameez</h2>
+      <p>Traditional wear with a modern touch</p>
+      <div class="badges">
+        <span class="badge">⭐ Best Seller</span>
+        <span class="badge">🚚 Free Shipping</span>
+      </div>
+      <p class="price">$12</p>
+      <button class="btn">🛒 Add to Cart</button>
+    </div>
+
+    <!-- Maxi -->
+    <div class="product-card">
+      <img src="images/maxi.jpg" alt="Stylish maxi">
+      <h2>Stylish Maxi Dress</h2>
+      <p>Elegant design that blends comfort with grace</p>
+      <div class="badges">
+        <span class="badge">⭐ Trending</span>
+        <span class="badge">👟 Comfort Fit</span>
+      </div>
+      <p class="price">$90</p>
+      <button class="btn">🛒 Add to Cart</button>
+    </div>
+
+    <!-- Sandles -->
+    <div class="product-card">
+      <img src="images/sandles.jpg" alt="Luxury sandles">
+      <h2>Sandles</h2>
+      <p>Stay stylish and comfortable every step of the way.</p>
+      <div class="badges">
+        <span class="badge">💎 Luxury</span>
+        <span class="badge">🎁 Comfort</span>
+      </div>
+      <p class="price">$25</p>
+      <button class="btn">🛒 Add to Cart</button>
+    </div>
+
+    <!-- Gadgets -->
+    <div class="product-card">
+      <img src="images/laptop.webp" alt="Premium laptop">
+      <h2>High Quality Laptop</h2>
+      <p>Powerful performance for work, study, and play</p>
+      <div class="badges">
+        <span class="badge">👜 Premium Quality</span>
+        <span class="badge">✔ Durable</span>
+      </div>
+      <p class="price">$180</p>
+      <button class="btn">🛒 Add to Cart</button>
+    </div>
+
+  </main>
+
+<footer>
+    <div class="container">
+      <h2>ShopStyle</h2>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="shop.html">Shop</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p>© 2025 ShopStyle. All Rights Reserved by Faiza Mehram.</p>
+    </div>
+  </footer>
+  </footer>
+
+</body>
+</html>
